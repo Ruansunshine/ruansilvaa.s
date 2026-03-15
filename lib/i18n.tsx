@@ -82,7 +82,7 @@ export const TRANSLATIONS = {
     download_cv: { pt: "Baixar Curriculo", en: "Download CV" },
   },
   engineering: {
-    title: { pt: "Bacharel em Engenharia  de Computação", en: "Bachelor’s Degree in Computer Engineering" },
+    title: { pt: "Bacharelado em Engenharia de Computação (em andamento)", en: "Bachelor's in Computer Engineering (in progress)" },
     hackathons: { pt: "Hackathons", en: "Hackathon Achievements" },
     timeline: { pt: "Linha do Tempo", en: "Timeline" },
     certifications: { pt: "Certificacoes", en: "Certifications" },

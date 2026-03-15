@@ -72,4 +72,42 @@ export const HACKATHON_DETAILS: Record<string, HackathonDetail> = {
     certificate: "(adicione aqui o link ou imagem do certificado)",
     publications: [{ label: "LinkedIn", url: "#" }],
   },
+  "hackathon-3": {
+    id: "hackathon-3",
+    description: "(adicione aqui a explicação do Hackathon Mercado 3)",
+    certificate: "(adicione aqui o link ou imagem do certificado)",
+    publications: [
+      { label: "LinkedIn", url: "#" }
+    ],
+    team: {
+      pt: [
+        'Sobre o Projeto:',
+        '- Problema:',
+        '- Ideia:',
+        '- Stack:',
+        '- Objetivo:',
+        '',
+        'Sobre o Time:',
+        '- Composto por:',
+        '- Papéis bem definidos:',
+        '  • Líder:',
+        '  • Desenvolvimento:',
+        '  • Outros:',
+      ].join('\n'),
+      en: [
+        'About the Project:',
+        '- Problem:',
+        '- Idea:',
+        '- Stack:',
+        '- Goal:',
+        '',
+        'About the Team:',
+        '- Composed of:',
+        '- Well-defined roles:',
+        '  • Leader:',
+        '  • Development:',
+        '  • Others:',
+      ].join('\n'),
+    },
+  },
 };

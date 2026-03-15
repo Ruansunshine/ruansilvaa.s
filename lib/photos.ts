@@ -153,24 +153,50 @@ export const HACKATHON_PHOTOS = [
     // Detalhes completos no TRILHAS_DETAILS
   },
   {
-    id: "hackathon-2",
+    id: "hackathon-3",
     title: {
-      pt: "Hackathon 2",
-      en: "Hackathon 2"
+      pt: "Hackathon do Mercado - Prefeitura de São Luís",
+      en: "Hackathon do Mercado - São Luís City Hall"
     },
-    image: "/images/hackathons/hackathon-2.jpg",
-    images: ["/images/hackathons/hackathon-2.jpg"],
+    image: "/images/hackathons/hackathon-3.jpg",
+    images: ["/images/hackatonMercado/foto1.jpeg", "/images/hackatonMercado/foto2.jpeg", "/images/hackatonMercado/IMG_1361.JPG", "/images/hackatonMercado/IMG_1402.JPG",],
     description: {
-      pt: "Hackathon Trilhas Inova, evento que finaliza o programa, reunindo jovens participantes e convidados limitados para o desenvolvimento de soluções para o estado do Maranhão.",
-      en: "Hackathon description"
+      pt: "Hackathon do Mercado: Iniciativa da Prefeitura de São Luís para universitários. Estagiários de TI da SEMIT. O objetivo era propor soluções para quatro desafios do hackathon.",
+      en: "Hackathon do Mercado: An initiative by the São Luís City Hall aimed at university students. We participated as IT interns from SEMIT (Municipal Technology Department). The goal was to develop innovative solutions for four challenges presented as hackathon themes."
     },
     placement: {
-      pt: "2º lugar",
-      en: "2nd place"
+      pt: "3º lugar",
+      en: "3rd place"
     },
     team: {
-      pt: "",
-      en: ""
+      pt: [
+        'Sobre o Projeto:',
+        '- Problema:',
+        '- Ideia:',
+        '- Stack:',
+        '- Objetivo:',
+        '',
+        'Sobre o Time:',
+        '- Composto por:',
+        '- Papéis bem definidos:',
+        '  • Líder:',
+        '  • Desenvolvimento:',
+        '  • Outros:',
+      ].join('\n'),
+      en: [
+        'About the Project:',
+        '- Problem:',
+        '- Idea:',
+        '- Stack:',
+        '- Goal:',
+        '',
+        'About the Team:',
+        '- Composed of:',
+        '- Well-defined roles:',
+        '  • Leader:',
+        '  • Development:',
+        '  • Others:',
+      ].join('\n'),
     },
   },
 ]

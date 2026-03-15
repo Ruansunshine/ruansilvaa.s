@@ -6,6 +6,7 @@ import { PERSONAL, TIMELINE, TECH_STACK, PROJECTS, type TimelineItem } from "@/l
 import { PHOTOS } from "@/lib/photos"
 import { HACKATHON_PHOTOS } from "@/lib/photos"
 import { HACKATHON_DETAILS } from "@/lib/hackathon-details"
+import { HACKATHON_MERCADO_DETAILS } from "@/lib/mercado-details"
 import { TRILHAS_DETAILS } from "@/lib/trilhas-details"
 import { CERTIFICATES } from "@/lib/certificates"
 import { TopNav } from "@/components/top-nav"
@@ -194,9 +195,19 @@ export default function EngineeringPage() {
         <h1 className="mt-3 text-balance text-center font-sans text-2xl font-bold text-foreground sm:mt-4 sm:text-3xl md:text-4xl">
           {t(TRANSLATIONS.engineering.title)}
         </h1>
-        <p className="mt-2 max-w-md px-4 text-center font-mono text-xs text-muted-foreground sm:text-sm">
-          {t(PERSONAL.bio)}
-        </p>
+        {/* Bio compacta e stacks em grid */}
+        <div className="text-center text-xs text-muted-foreground font-mono mt-2">
+          {t(PERSONAL.bio).split('\n')[0]}
+        </div>
+        <div className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1 text-xs sm:text-sm font-mono text-muted-foreground mt-1">
+          {t(PERSONAL.bio)
+            .split('\n')
+            .slice(1)
+            .filter(line => line.trim())
+            .map((line, idx) => (
+              <div key={idx} className="truncate">{line}</div>
+            ))}
+        </div>
       </header>
 
       
@@ -313,16 +324,23 @@ export default function EngineeringPage() {
                       <DialogDescription>
                         {(() => {
                           // Se for o card do Trilhas, usa TRILHAS_DETAILS
-                          const detail = hack.id === "hackathon-2"
-                            ? TRILHAS_DETAILS["trilhas-1"]
-                            : HACKATHON_DETAILS[hack.id]
-                          const isTrilhas = hack.id === "hackathon-2"
-                          const detailsT = isTrilhas ? TRANSLATIONS.engineering.trilhas_details : TRANSLATIONS.engineering.hackathon_details
+                          let detail;
+                          let detailsT;
+                          if (hack.id === "hackathon-2") {
+                            detail = TRILHAS_DETAILS["trilhas-1"];
+                            detailsT = TRANSLATIONS.engineering.trilhas_details;
+                          } else if (hack.id === "hackathon-3") {
+                            detail = HACKATHON_MERCADO_DETAILS["hackathon-3"];
+                            detailsT = TRANSLATIONS.engineering.hackathon_details;
+                          } else {
+                            detail = HACKATHON_DETAILS[hack.id];
+                            detailsT = TRANSLATIONS.engineering.hackathon_details;
+                          }
                           return (
                             <>
                               <div className="mb-2">
                                 <span className="font-semibold">{t(detailsT.explanation_label)}</span><br />
-                                <span className="text-foreground">{t(detailsT.explanation)}</span>
+                                <span className="text-foreground">{detail?.description}</span>
                               </div>
                               <div className="mb-2">
                                 <span className="font-semibold">{t(detailsT.certificate)}:</span><br />
@@ -386,8 +404,9 @@ export default function EngineeringPage() {
             })}
           </div>
         </Section>
-
-
+        <div className="mt-4 text-center font-mono text-xs text-muted-foreground sm:text-sm">
+          Minha participação ativa nos três polos de impacto em São Luís — Indústria, Governo do Estado e a Prefeitura de São Luís.
+        </div>
 
 
 
